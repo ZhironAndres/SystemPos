@@ -1,0 +1,141 @@
+@media only screen and (max-width:600px) {
+  .nav-tag {
+    height: 65px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    z-index: 1;
+    align-items: center;
+}
+
+
+.container-list {
+  padding: 189px;
+}
+.welcome-home {
+  width: 100%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-home {
+  width: 75%;
+  height: 350px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-about h4 {
+  font-size: 2rem;
+  color: #222;
+}
+.description-about p {
+  font-size: 1.2rem;
+  color: #222;
+  padding: 5px;
+}
+.slider {
+  position: relative;
+  background: white;
+  width: 100%;
+  min-height: 179px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider .slide {
+  position: absolute;
+  width: 490px;
+  height: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+.services-poster p {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.team-developer .team-description {
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.image-container img {
+  width: 280px;
+  height: 200px;
+}
+.card-people {
+  width: 280px;
+  height: 250px;
+  border-radius: 2px;
+  background-color: #F4F6F7;
+  -webkit-box-shadow: 0px 0px 6px -2px #000000;
+  box-shadow: 0px 0px 6px -2px #000000;
+  margin-bottom: 10px;
+}
+.card {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  flex-direction: column;
+}
+.card-people .image-container {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+}
+.team-developer {
+  
+  height: 1050px;
+  
+}
+.social-media p {
+  font-size: 1.2rem;
+  padding: 7px;
+}
+.container-straight p {
+  font-size: 1.3rem;
+}
+.part-two h6 {
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.nav-logo {
+  width: 25px;
+  max-width: 25px;
+  min-width: 25px;
+}
+.contact-media p {
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.navigation {
+  height: 407px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin: 35px;
+}
+.testimonials {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+}

@@ -1,0 +1,28 @@
+@media only screen and  (max-width:992px) {
+  
+  .nav-logo {
+    width: 150px;
+}
+.container-list li {
+  padding: 15px;
+  
+}
+  .welcome-home {   
+    height: 800px;
+   
+}
+  
+  .container-description {  
+    height: 400px;
+
+}
+
+.profile img {
+  width: 100px;
+ 
+}
+
+.card-2 p {
+  font-size: 1rem;
+}
+}

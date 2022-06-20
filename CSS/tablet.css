@@ -1,0 +1,247 @@
+
+@media only screen and  (max-width:768px) {
+
+  .welcome-home {    
+    height: 500px;
+    min-height: 500px;
+  max-height: 500px;
+}
+.container-description {
+  height: 260px;
+  min-height: 260px;
+  max-height: 260px;
+}
+.container-description h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.description-home a {
+  
+  font-size: 1.2rem;
+  
+}
+
+.card-description p {
+  font-size: 1rem;
+}
+.container-description p {
+  width: 89%;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.card-description h3 {
+  font-size: 1.2rem;
+}
+.description-about {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}  
+.slider {
+  position: relative;
+  background: white;
+  width: 100%;
+  min-height: 500px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.slider .slide {
+  position: absolute;
+  width: 700px;
+  height: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+.slider .slide .info {
+    position: relative;
+    width: 85%;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.prev-btn, .next-btn {
+  z-index: 2;
+  font-size: 2rem;
+  color: #222;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  cursor: pointer;
+}
+.slider .slide .info h5 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.slider .slide .info p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.services-poster h3 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  padding: 15px;
+  text-transform: uppercase;
+}
+.services-poster p {
+  font-size: 1.7rem;
+  padding: 10px;
+}
+
+.list-services h4 {
+  font-size: 1.5rem;
+  color: #F4F6F7;
+  text-align: center;
+}
+
+.team-developer .team-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+.team-developer .team-description {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.card {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card-people {
+  width: 300px;
+  height: 300px;
+  border-radius: 2px;
+  background-color: #F4F6F7;
+  -webkit-box-shadow: 0px 0px 6px -2px #000000;
+  box-shadow: 0px 0px 6px -2px #000000;
+  margin-bottom: 30px;
+}
+
+.testimonials-description {
+  width: 300px;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero h4 {
+  font-size: 1.2rem;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.profile img {
+  width: 80px;
+}
+.card-2 {
+  height: 300px;
+  padding: 40px;
+  color: #777;
+  line-height: 18px;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.profile h5 {
+  font-size: 2rem;
+  color: rgb(43, 247, 207);
+  margin-bottom: 8px;
+}
+.testimonials-description h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+.testimonials-description .little-phrase {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 100px;
+  padding: 10px;
+}
+.part-two p {
+  font-size: 1.2rem;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+.part-two h6 {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.part-four h6 {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.social-media p {
+  font-size: 1.2rem;
+  padding: 13px;
+}
+
+.part-three h6 {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .container-list ul {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+  .container-list li{
+    margin: 16px 0;
+  }
+  .container-list ul.active{
+    left: 0;
+
+  }
+
+  .container-list {
+    padding: 220px;
+  }
+
+
+}
