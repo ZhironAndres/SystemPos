@@ -155,7 +155,7 @@ header{
 
 .profileDisplay{
     width:40%;
-    height: 900px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     margin-top: 80px;
@@ -167,7 +167,7 @@ header{
 
 .cardProfile{
     width: 400px;
-    height: 650px;
+    height: 700px;
     display: flex;
     align-items: center;  
     background-color: #ffffff;
@@ -241,7 +241,10 @@ header{
    
     justify-content: center;
 }
-
+.info{
+    width: 100%;
+    padding: 15px;
+}
 .datosPersonales h4{
     font-size: 1.7rem;
     border-bottom: 1px solid black;
@@ -314,9 +317,113 @@ header{
 
 .infoDisplay{
     width:60%;
-    height: 900px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     margin-top: 80px;
     align-items: center; 
+}
+
+.information{
+    width: 100%;
+    height: 345px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    width: 500px;
+    height: 50px;
+   
+}
+
+.titulo h5{
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+}
+
+.titulo i{
+    font-size: 1.6rem;
+}
+
+.campos{
+    width: auto;
+    height: auto;
+
+}
+
+.campos p{
+    font-size: 1.6rem;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+.campos span{
+   font-size: 1.6rem;
+   font-weight: 500; 
+}
+.certify{
+    width: auto;
+    height: auto; 
+}
+.certify p{
+    font-size: 1.6rem; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.files{
+    width: 500px;
+    height: 100px;
+}
+
+.files p{
+    font-size: 1.6rem; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.files input{
+    font-size: 1.2rem;
+}
+.buttonActualizar{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonActualizar button{
+    width: 150px;
+    height: 50px;
+   margin: 0 auto;
+    border-radius: 50px;
+   border: none;
+    background-color:black;
+
+
+}
+
+.buttonActualizar a{
+    width: 100%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.buttonActualizar button:hover{
+    border: 3px solid rgb(26, 188, 156);
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 0 0 50px  rgb(43, 247, 207);
+    }
+}
+
+.buttonActualizar i{
+    color: white;
+    font-size: 1rem;
 }

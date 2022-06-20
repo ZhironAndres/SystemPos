@@ -26,15 +26,9 @@
             </div>
             <div class="container-list">
                 <ul class="nav-menu">
-                    <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Nosotros">Nosotros <i class="fa-solid fa-angle-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="#">Mision</a></li>
-                            <li><a href="#">Vision</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="php/iniciarSesion.php">Iniciar <span></span> Sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="php/iniciarSesion.php">Publicar perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contacto">Cerrar Sesion</a></li>
                 </ul>
             </div>
             <div class="hamburger">
@@ -72,7 +66,8 @@
                         <div class="datos"> <p>Tipo de Documento:   <span>Cedula</span></p> </div>
                        <div class="datos"> <p>No. Documento:  <span>47896560212</span></p> </div>
                        <div class="datos"> <p>Genero:   <span>Masculino</span></p> </div>
-                    <div class="datos"> <p>Telefono:  <span>301145454</span></p> </div>                    
+                    <div class="datos"> <p>Telefono:  <span>301145454</span></p> </div>
+                    <div class="datos"> <p>Correo:   <span>ml@gmail.com</span></p> </div>                    
                     <div class="datos"> <p>Direccion:   <span>Nelson mandela sector tal</span></p> </div> 
                        </div>     
                     </div>
@@ -88,10 +83,10 @@
                     <div class="campos"><p>Nombre de la empresa: <span>Ecopetrol</span></p></div>
                     <div class="campos"><p>Fecha de inicio: <span>Ecopetrol</span></p></div>
                     <div class="campos"><p>Nombre de finalizacion: <span>Ecopetrol</span></p></div>
-                    <div>                        
-                        <p>Certificados</p>
+                    <div class= "certify">                        
+                        <p>Certificados:</p>
                     </div>
-                    <div >
+                    <div class= "files">
                         <p>Agregar certificado</p>
                         <input type="file" name="" id="">
                     </div>
@@ -101,15 +96,19 @@
                     <div class="campos"><p>Nombre de la institucion: <span>Ecopetrol</span></p></div>
                     <div class="campos"><p>Fecha de inicio: <span>01-05-2002</span></p></div>
                     <div class="campos"><p>Fecha de finalizacion: <span>08-12-2010</span></p></div>
-                    <div>                        
-                        <p>Certificados</p>
+                    <div class= "certify">                        
+                        <p>Certificados:</p>
                     </div>
-                    <div>
+                    <div class= "files">
                         <p>Agregar certificado</p>
                         <input type="file" name="" id="">
                     </div>
                 </div>
-                <div class="information"></div>
+                <div class="information">
+                <div class="buttonActualizar">
+                        <button><a href="#">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                </div>
             </section>
         </section>
     </main>
