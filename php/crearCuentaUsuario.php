@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,17 +26,14 @@
                 <div class="form-element">
                     <label for="text">Nombres</label>
                     <input type="text" name="nombres" id="name" placeholder="Ingrese sus nombres" required>
-                    
                 </div>
                 <div class="form-element">
                     <label for="text">Apellidos</label>
                     <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos" required>
-                    
                 </div>
                 <div class="form-element">
                     <label for="email">Correo Electronico</label>
                     <input type="text" name="correo" id="email" placeholder="Ingrese su email" required>
-                   
                 </div>
                 <div class="form-element">
                     <label for="password">Contraseña</label>
