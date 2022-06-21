@@ -1,0 +1,434 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
+
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.disppear{
+   animation: vanish 1s forwards;
+
+}
+
+@keyframes vanish {
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+header{
+    width: 100%;   
+    display: flex;  
+    
+}
+.nav-tag{
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    z-index: 1;
+    align-items: center;
+   
+}
+.container-list {
+
+ height: auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+ 
+ 
+
+}
+
+.nav-logo {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo img{
+    width: 100px;
+    height: 50px;
+    
+}
+.container-list ul{
+    display: flex;
+    text-decoration: none;
+    margin-right: 200px;
+    list-style: none;
+    
+    
+}
+.container-list li{
+    padding: 20px;
+    text-decoration: none;
+    list-style: none;
+   
+    
+}
+
+.container-list a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.7rem;
+    padding: 0 20px;
+    font-weight: bold;
+    transition: all 500ms ease;
+       
+}
+.container-list a:hover{   
+    border-bottom: 2px solid rgb(26, 188, 156);  
+    color: black;   
+    
+}
+
+.container-list .submenu{
+   background-color: #ffffff;
+   box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.2);
+   display: none;
+
+}
+
+.container-list .submenu li a{
+ line-height: 10px;
+}
+
+.container-list ul li a:hover + ul, .container-list .submenu:hover{
+ display: flex  ;
+ flex-direction: column;
+ cursor: pointer;
+ padding: 0;
+ margin-left: 0;
+ margin-right: 0;
+ margin-top: 0;
+ margin-bottom: -100px;
+ box-sizing: border-box;
+ 
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer; 
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+/*Main*/
+
+.display{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    
+   
+}
+
+.profileDisplay{
+    width:100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    align-items: center;
+    
+    
+    
+    
+
+}
+
+.cardProfile{
+    width: 400px;
+    height: 700px;
+    display: flex;
+    align-items: center;  
+    background-color: #ffffff;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid #45B39D;
+    box-shadow: 0px 0px 6px -2px #000000;
+}
+
+.imageContainer{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.imageBox{
+    width: 180px;
+    height: 180px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #45B39D;
+   margin-top: 20px;
+}
+
+.imageBox img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.bienvenidaUsuario {
+    width: 100%;
+    height: 100px;
+    
+    
+}
+.nombre{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nombre h4{
+    font-size: 2rem;
+}
+.littleDescription{
+    width: 100%;    
+    padding: 15px;
+
+}
+
+.littleDescription p{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.littleDescription h4{
+    font-size: 1.7rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;  
+}
+
+                    
+.datosPersonales{
+    width: 100%;
+    height: 400px;
+    display: flex;
+   
+    justify-content: center;
+}
+.info{
+    width: 100%;
+    padding: 15px;
+}
+.datosPersonales h4{
+    font-size: 1.7rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.datos{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: column;   
+    
+   
+}
+
+.datos p{
+    font-size: 1.5rem;
+    font-weight: 700;
+ padding: 10px;
+}
+
+.datos span{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.botonActualizar{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonActualizar button{
+    width: 150px;
+    height: 50px;
+   margin: 0 auto;
+    border-radius: 50px;
+   border: none;
+    background-color:black;
+
+
+}
+
+.botonActualizar a{
+    width: 100%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.botonActualizar button:hover{
+    border: 3px solid rgb(26, 188, 156);
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 0 0 50px  rgb(43, 247, 207);
+    }
+}
+
+.botonActualizar i{
+    color: white;
+    font-size: 1rem;
+}
+
+
+.infoDisplay{
+    width:60%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    align-items: center; 
+}
+
+.information{
+    width: 100%;
+    height: 345px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    width: 500px;
+    height: 50px;
+   
+}
+
+.titulo h5{
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+}
+
+.titulo i{
+    font-size: 1.6rem;
+}
+
+.campos{
+    width: auto;
+    height: auto;
+
+}
+
+.campos p{
+    font-size: 1.6rem;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+.campos span{
+   font-size: 1.6rem;
+   font-weight: 500; 
+}
+.certify{
+    width: auto;
+    height: auto; 
+}
+.certify p{
+    font-size: 1.6rem; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.files{
+    width: 500px;
+    height: 100px;
+}
+
+.files p{
+    font-size: 1.6rem; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.files input{
+    font-size: 1.2rem;
+}
+.buttonActualizar{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonActualizar button{
+    width: 150px;
+    height: 50px;
+   margin: 0 auto;
+    border-radius: 50px;
+   border: none;
+    background-color:black;
+
+
+}
+
+.buttonActualizar a{
+    width: 100%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.buttonActualizar button:hover{
+    border: 3px solid rgb(26, 188, 156);
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 0 0 50px  rgb(43, 247, 207);
+    }
+}
+
+.buttonActualizar i{
+    color: white;
+    font-size: 1rem;
+}
