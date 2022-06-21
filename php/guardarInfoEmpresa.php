@@ -19,6 +19,7 @@ include ('conexion.php');
 
 	if($consulta->execute()){
 		echo "Datos almacenados";
+		header("Location: paginaPrincipalEmpresa.php");
 	}else{
 		echo "Error no se pudo almacenar los datos";
 	}

@@ -28,7 +28,7 @@
                 <ul class="nav-menu">
                     <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>                    
                     <li class="nav-item"><a class="nav-link" href="php/iniciarSesion.php">Publicar perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Contacto">Cerrar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion</a></li>
                 </ul>
             </div>
             <div class="hamburger">
@@ -96,6 +96,19 @@
                     <div class="campos"><p>Nombre de la institucion: <span>Ecopetrol</span></p></div>
                     <div class="campos"><p>Fecha de inicio: <span>01-05-2002</span></p></div>
                     <div class="campos"><p>Fecha de finalizacion: <span>08-12-2010</span></p></div>
+                    <div class= "certify">                        
+                        <p>Certificados:</p>
+                    </div>
+                    <div class= "files">
+                        <p>Agregar certificado</p>
+                        <input type="file" name="" id="">
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="titulo"> <h5>Habilidades y Herramientas <i class="fa-solid fa-screwdriver-wrench"></i></h5></div>
+                    <div class="campos"><p>Cargo: <span>Desarrollador Movil</span></p></div>
+                    <div class="campos"><p>Lenguajes de Programacion: <span>Flutter, Dart</span></p></div>
+                    <div class="campos"><p>Otros: <span>Git, Github</span></p></div>
                     <div class= "certify">                        
                         <p>Certificados:</p>
                     </div>

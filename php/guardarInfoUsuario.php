@@ -1,7 +1,9 @@
 <?php
-include ('conexion.php');
 
-	$carpetaArchivos = "archivos/";
+
+include ('conexion.php');
+session_start();
+	$carpetaArchivos = $_SERVER["DOCUMENT_ROOT"]."/SystemPos/archivos/";
 	$ciudad=$_POST['ciudad'];
 	$departamento=$_POST['departamento'];
 	$fechaNaci=$_POST['fechaNaci'];
@@ -86,8 +88,8 @@ include ('conexion.php');
 		}
   	}
 
-	$consulta=$conexion->prepare("INSERT INTO formulariousu(foto,ciudad,departamento,fechaNaci,residencia,sexo,documento,numDocumet,telefono,nombreEmpresa,fechaInicio,cargo,files) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-
+	$consulta=$conexion->prepare("INSERT INTO formulariousu(foto,ciudad,departamento,fechaNaci,residencia,sexo,documento,numDocumet,telefono,nombreEmpresa,fechaInicio,cargo,files,usuario_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $idUsuario= $_SESSION["id_usuario"];
 	$consulta->bindParam(1,$nombreFoto);
 	$consulta->bindParam(2,$ciudad);
 	$consulta->bindParam(3,$departamento);
@@ -101,12 +103,15 @@ include ('conexion.php');
 	$consulta->bindParam(11,$fechaInicio);
 	$consulta->bindParam(12,$cargo);
 	$consulta->bindParam(13,$nombreCV);
+	$consulta->bindParam(14,$idUsuario);
 
 
 	if($consulta->execute()){
 		echo "Datos almacenados";
+		header("Location:paginaPrincipalUsuario.php");
 	}else{
 		echo "Error no se pudo almacenar los datos";
+		header("Location:formularioUsuario.php");
 	}
 
 	?>

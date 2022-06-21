@@ -10,6 +10,7 @@
     session_destroy();
   }
 
+
 /*if(!isset($_GET["id"])) exit();
 $id = $_GET["id"];*/
 
