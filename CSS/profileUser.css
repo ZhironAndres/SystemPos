@@ -198,6 +198,7 @@ header{
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    background-size: cover;
 }
 
 .bienvenidaUsuario {
@@ -321,12 +322,12 @@ header{
     display: flex;
     flex-direction: column;
     margin-top: 80px;
-    align-items: center; 
+    align-items: center
 }
 
 .information{
     width: 100%;
-    height: 345px;
+    height: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -365,11 +366,23 @@ header{
 .certify{
     width: auto;
     height: auto; 
+    
 }
 .certify p{
     font-size: 1.6rem; 
     font-weight: 700;
     margin-bottom: 10px;
+}
+
+.certify figcaption{
+    width: 150px;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+}
+.certify figcaption img{
+    width: 100%;
+    height: 100%;
 }
 
 .files{

@@ -40,6 +40,10 @@ $id = $_GET["id"];*/
             <div> <h5><i class="bi bi-file-person-fill"></i> subir foto de perfil </h5>
                   <input type="file" name="foto">
              </div> <br>
+             <div class="mb-3">
+                          <label class="form-label"> <i class="bi bi-person-check"></i> Breve descripcion de usted</label>
+                           <textarea name="description" id="description" class="form-control" placeholder="Digite aquí lo que realizaba en esa empresa"></textarea>
+                    </div>
             <div class="mb-1">
 
                     <div class="mb-4 d-flex justify-content-between"> 
@@ -118,9 +122,35 @@ $id = $_GET["id"];*/
                           <label class="form-label"> <i class="bi bi-person-check"></i> Cargo que desempeñó</label>
                            <textarea name="cargo" id="cargo" class="form-control" placeholder="Digiete aquí lo que realizaba en esa empresa"></textarea>
                     </div>
+                    <h6 style="text-align: center;" ><i class="bi bi-mortarboard-fill"></i> Estudios</h6>
+                    <div>
+                            <label for="nomInstitu"> <i class="bi bi-globe2"></i> Institucion</label>
+                            <input type="text" class="form-control" name="nomInstitu" id="nomInstitu" placeholder= "Nombre de la institucion" required>
+                            
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha inicio </label>
+                          <input type="date" name="fechaInicial" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                          <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha de finalizacion </label>
+                          <input type="date" name="fechaFinalizacion" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                    </div>
 
-
-
+                    <label class="btn" for="my-file-selector">
+                           <input type="file" name="certificados" id="certificados" multiple>
+                          </label>
+                          <h6 style="text-align: center;" ><i class="bi bi-mortarboard-fill"></i> Habilidades</h6>
+                    <div>
+                            <label for="lenguajes"> <i class="bi bi-globe2"></i> Lenguajes de programacion</label>
+                            <input type="text" class="form-control" name="lenguajes" id="lenguajes" placeholder= "Lenguajes de programacion" required>
+                            
+                        </div>
+                        <div>
+                            <label for="herramientas"> <i class="bi bi-globe2"></i> Herramientas</label>
+                            <input type="text" class="form-control" name="herramientas" id="herramientas"  placeholder= "Por favor indique que herramientas utiliza ejemplo: Github, Git" required>
+                            
+                        </div>
                     <div class="mb-3 content_select">
                           <label>Por favor, cargue a continuación la documentacion restante</label><br>
                           <ol>

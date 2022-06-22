@@ -1,3 +1,25 @@
+<?php
+session_start();
+include("conexion.php");
+
+$correo = $_SESSION['correo'];
+$idUsuario= $_SESSION["id_usuario"];
+$sentencia = $conexion->query("select * from formulariousu where usuario_id = '$idUsuario'");
+$sentenciaDos = $conexion->query("select * from usuario where id = '$idUsuario'");
+$sentenciaDos->execute();
+$info= $sentenciaDos->fetchAll();
+  $sentencia->execute();
+  $datos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+  
+    ?>
+  
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +38,7 @@
     <link rel="stylesheet" href="../CSS/profileUser.css">
 </head>
 <body>
-<div class="loader">
-        <img src="../IMG/loader.gif" alt="">
-    </div>
+
     <header>
         <nav class="nav-tag">
             <div class="nav-logo">
@@ -41,50 +61,61 @@
     <main>
         <section class="display">
             <section class="profileDisplay">
+        
                 <div class="cardProfile">
+                <?php foreach ($datos as $dato) {?>
                     <div class="imageContainer">
                         <div class="imageBox">
-                            <img src="../IMG/dev2.jpg" alt="Imagen correspondiente al desarrollador">
+                            <img src="../archivos/<?php echo $dato->foto;}?>" alt="Imagen correspondiente al desarrollador">
                         </div>
                     </div>
+                    <?php foreach ($info as $inf) { ?>
                     <div class="bienvenidaUsuario">
-                    <div class="nombre"><h4>Andres Morales</h4></div>  
+                    <div class="nombre"><h4><?php echo$inf["nombres"]." ".$inf["apellidos"] ; } ?></h4></div>  
                     </div>
                     <div class="littleDescription"> 
-                    <h4>Descripcion</h4>                    
+                    <h4>Descripcion</h4> 
+                    <?php foreach ($datos as $dato) {?>                   
                     <div>                   
-                        <p>Soy un ingeniero de sistemas con mas de 10 años de experiencia en desarrollo de aplicaciones moviles</p>
+                        <p><?php echo $dato->ciudad; }?></p>
                         </div>                        
                     </div>
                     <div class="datosPersonales">
                     <div class="info">
+                    <?php foreach ($datos as $dato) {?>
                         <h4>Datos Personales</h4>
                        <div>    
-                        <div class="datos"> <p>Ciudad de Nacimiento: <span>Cartagena de Indias</span> </p></div>
-                        <div class="datos"> <p>Departamento: <span>Bolivar</span></p> </div>
-                        <div class="datos"> <p>Fecha de nacimiento:    <span>1998 - 06 -20</span></p> </div>
-                        <div class="datos"> <p>Tipo de Documento:   <span>Cedula</span></p> </div>
-                       <div class="datos"> <p>No. Documento:  <span>47896560212</span></p> </div>
-                       <div class="datos"> <p>Genero:   <span>Masculino</span></p> </div>
-                    <div class="datos"> <p>Telefono:  <span>301145454</span></p> </div>
-                    <div class="datos"> <p>Correo:   <span>ml@gmail.com</span></p> </div>                    
-                    <div class="datos"> <p>Direccion:   <span>Nelson mandela sector tal</span></p> </div> 
+                        <div class="datos"> <p>Ciudad de Nacimiento: <span><?php echo $dato->ciudad?></span> </p></div>
+                        <div class="datos"> <p>Departamento: <span><?php echo $dato->departamento?></span></p> </div>
+                        <div class="datos"> <p>Fecha de nacimiento:    <span><?php echo $dato->fechaNaci?></span></p> </div>
+                        <div class="datos"> <p>Tipo de Documento:   <span><?php echo $dato->documento?></span></p> </div>
+                       <div class="datos"> <p>No. Documento:  <span><?php echo $dato->numDocumet?></span></p> </div>
+                       <div class="datos"> <p>Genero:   <span><?php echo $dato->sexo?></span></p> </div>
+                    <div class="datos"> <p>Telefono:  <span><?php echo $dato->telefono?></span></p> </div>
+                    <div class="datos"> <p>Direccion:   <span><?php echo $dato->residencia; }?></span></p> </div> 
+                    <div class="datos"> <p>Correo:   <span> <?php echo $correo?></span></p> </div>                    
                        </div>     
                     </div>
                     </div>
                     <div class="botonActualizar">
                         <button><a href="#">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
+                
                 </div>
             </div>
             </section>
             <section class="infoDisplay">
+            <?php foreach ($datos as $dato) {?>
                 <div class="information">
                     <div class="titulo"> <h5>Experiencia laboral <i class="fa-solid fa-briefcase"></i></h5></div>
-                    <div class="campos"><p>Nombre de la empresa: <span>Ecopetrol</span></p></div>
-                    <div class="campos"><p>Fecha de inicio: <span>Ecopetrol</span></p></div>
-                    <div class="campos"><p>Nombre de finalizacion: <span>Ecopetrol</span></p></div>
+                    <div class="campos"><p>Nombre de la empresa: <span><?php echo $dato->nombreEmpresa?></span></p></div>
+                    <div class="campos"><p>Fecha de inicio: <span><?php echo $dato->fechaInicio?></span></p></div>
+                    <div class="campos"><p>Cargo: <span><?php echo $dato->cargo; ?>l</span></p></div>
+                    <div class="campos"><p>Fecha de finalizacion: <span><?php echo $dato->fechaFinal ?></span></p></div>
                     <div class= "certify">                        
                         <p>Certificados:</p>
+                        <figcaption>                        
+                            <img  src="../archivos/<?php echo $dato->files ?>" alt="">
+                        </figcaption>
                     </div>
                     <div class= "files">
                         <p>Agregar certificado</p>
@@ -93,11 +124,14 @@
                 </div>
                 <div class="information">
                     <div class="titulo"> <h5>Estudios <i class="fa-solid fa-graduation-cap"></i></h5></div>
-                    <div class="campos"><p>Nombre de la institucion: <span>Ecopetrol</span></p></div>
-                    <div class="campos"><p>Fecha de inicio: <span>01-05-2002</span></p></div>
-                    <div class="campos"><p>Fecha de finalizacion: <span>08-12-2010</span></p></div>
+                    <div class="campos"><p>Nombre de la institucion: <span><?php echo $dato->nomInstitu ?></span></p></div>
+                    <div class="campos"><p>Fecha de inicio: <span><?php echo $dato->fechaInicial ?></span></p></div>
+                    <div class="campos"><p>Fecha de finalizacion: <span><?php echo $dato->fechaFinalizacion ?></span></p></div>
                     <div class= "certify">                        
-                        <p>Certificados:</p>
+                    <p>Certificados:</p>
+                        <figcaption>                        
+                            <img  src="../archivos/<?php echo $dato->certificados ?>" alt="">
+                        </figcaption>
                     </div>
                     <div class= "files">
                         <p>Agregar certificado</p>
@@ -106,9 +140,8 @@
                 </div>
                 <div class="information">
                     <div class="titulo"> <h5>Habilidades y Herramientas <i class="fa-solid fa-screwdriver-wrench"></i></h5></div>
-                    <div class="campos"><p>Cargo: <span>Desarrollador Movil</span></p></div>
-                    <div class="campos"><p>Lenguajes de Programacion: <span>Flutter, Dart</span></p></div>
-                    <div class="campos"><p>Otros: <span>Git, Github</span></p></div>
+                    <div class="campos"><p>Lenguajes de Programacion: <span><?php echo $dato->lenguajes ?></span></p></div>
+                    <div class="campos"><p>Otros: <span><?php echo $dato->herramientas;  } ?></span></p></div>
                     <div class= "certify">                        
                         <p>Certificados:</p>
                     </div>
@@ -124,7 +157,7 @@
                 </div>
             </section>
         </section>
-    </main>
+    
     <footer></footer>
     <script src="../JS/loader2.js"></script>
 </body>
