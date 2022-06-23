@@ -14,6 +14,7 @@ session_start();
 	$telefono=$_POST['telefono'];
 	$nombreEmpresa=$_POST['nombreEmpresa'];
 	$fechaInicio=$_POST['fechaInicio'];
+	$fechaFinal=$_POST['fechaFinal'];
 	$cargo=$_POST['cargo'];
 	$nomInstitu=$_POST['nomInstitu'];
 	$fechainicial=$_POST['fechaInicial'];
@@ -126,7 +127,7 @@ session_start();
 		}
   	}
 
-	$consulta=$conexion->prepare("INSERT INTO formulariousu(foto,descripcion,ciudad,departamento,fechaNaci,residencia,sexo,documento,numDocumet,telefono,nombreEmpresa,fechaInicio,cargo,nomInstitu,fechaInicial,fechaFinalizacion,certificados,files,lenguajes,herramientas,usuario_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	$consulta=$conexion->prepare("INSERT INTO formulariousu(foto,descripcion,ciudad,departamento,fechaNaci,residencia,sexo,documento,numDocumet,telefono,nombreEmpresa,fechaInicio, fechaFinal,cargo,nomInstitu,fechaInicial,fechaFinalizacion,certificados,files,lenguajes,herramientas,usuario_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     $idUsuario= $_SESSION["id_usuario"];
 	$consulta->bindParam(1,$nombreFoto);
 	$consulta->bindParam(2,$descripcion);
@@ -140,15 +141,16 @@ session_start();
 	$consulta->bindParam(10,$telefono);
 	$consulta->bindParam(11,$nombreEmpresa);
 	$consulta->bindParam(12,$fechaInicio);
-	$consulta->bindParam(13,$cargo);
-	$consulta->bindParam(14,$nomInstitu);
-	$consulta->bindParam(15,$fechainicial);
-	$consulta->bindParam(16,$fechaFinalizacion);
-	$consulta->bindParam(17,$certificados);
-	$consulta->bindParam(18,$nombreCV);
-	$consulta->bindParam(19,$lenguajes);
-	$consulta->bindParam(20,$herramientas); 
-	$consulta->bindParam(21,$idUsuario);
+	$consulta->bindParam(13,$fechaFinal);
+	$consulta->bindParam(14,$cargo);
+	$consulta->bindParam(15,$nomInstitu);
+	$consulta->bindParam(16,$fechainicial);
+	$consulta->bindParam(17,$fechaFinalizacion);
+	$consulta->bindParam(18,$certificados);
+	$consulta->bindParam(19,$nombreCV);
+	$consulta->bindParam(20,$lenguajes);
+	$consulta->bindParam(21,$herramientas); 
+	$consulta->bindParam(22,$idUsuario);
 
 
 	if($consulta->execute()){

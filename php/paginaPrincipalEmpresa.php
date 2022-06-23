@@ -1,3 +1,19 @@
+<?php
+session_start();
+include("conexion.php");
+
+$correo = $_SESSION['correo'];
+$idEmpresa= $_SESSION["empresa_id"];
+$sentencia = $conexion->query("select * from formularioempresa where empresa_id = '$idEmpresa'");
+$sentenciaDos = $conexion->query("select * from empresa where id = '$idEmpresa'");
+$sentenciaDos->execute();
+$info= $sentenciaDos->fetchAll();
+$sentencia->execute();
+$datos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+  
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +44,7 @@
                 <ul class="nav-menu">
                     <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>                    
                     <li class="nav-item"><a class="nav-link" href="talento.php">Buscar Talento</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Contacto">Cerrar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion</a></li>
                 </ul>
             </div>
             <div class="hamburger">
@@ -47,27 +63,30 @@
                             <img src="../IMG/logoEmpresa.png" alt="Imagen correspondiente a la Empresa">
                         </div>
                     </div>
+                    <?php foreach ($info as $inf){  ?>
                     <div class="bienvenidaUsuario">
-                    <div class="nombre"><h4>ECOPETROL</h4></div>  
+                    <div class="nombre"><h4><?php echo $inf["empresa"]; }?></h4></div>  
                     </div>
-                    <div class="littleDescription"> 
+                    <div class="littleDescription">
+                        <?php foreach($datos as$dato){?> 
                     <h4>Descripcion</h4>                    
                     <div>                   
-                        <p>Somos una empresa  de actividades comerciales o industriales correspondientes o relacionadas con la exploración, explotación, refinación, transporte, almacenamiento, distribución y comercialización de hidrocarburos</p>
+                        <p><?php echo $dato->descripcion?></p>
                         </div>                        
                     </div>
                     <div class="datosPersonales">
                     <div class="info">
                         <h4>Datos de la Empresa</h4>
                        <div>    
-                        <div class="datos"> <p>Ciudad de ubicacion: <span>Cartagena de Indias</span> </p></div>
-                        <div class="datos"> <p>Departamento: <span>Bolivar</span></p> </div>
-                        <div class="datos"> <p>Fecha de creacion:    <span>1998 - 06 -20</span></p> </div>
                         
-                       <div class="datos"> <p>No. Nit:  <span>47896560212</span></p> </div>                     
-                    <div class="datos"> <p>Telefono:  <span>301145454</span></p> </div>
-                    <div class="datos"> <p>Correo:   <span>ml@gmail.com</span></p> </div>                    
-                    <div class="datos"> <p>Direccion:   <span>Nelson mandela sector tal</span></p> </div> 
+                        <div class="datos"> <p>Fecha de creacion:    <span><?php echo $dato->fechaFundacion?></p> </div>
+                        
+                       <div class="datos"> <p>No. Nit:  <span><?php echo $dato->nit?></span></p> </div>                     
+                    <div class="datos"> <p>Telefono:  <span><?php echo $dato->telefono?></span></p> </div>
+                    <div class="datos"> <p>Codigo Postal:  <span><?php echo $dato->codigoPostal?></span></p> </div>  
+                    <div class="datos"> <p>Correo:   <span><?php echo $correo;?></span></p> </div>                    
+                    <div class="datos"> <p>Direccion:   <span><?php echo $dato->ubicacion?></span></p> </div> 
+                    <div class="datos"> <p>Razon Social:  <span><?php echo $dato->razonSocial; }?></span></p> </div>
                        </div>     
                     </div>
                     </div>

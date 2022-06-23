@@ -30,7 +30,7 @@ $id = $_GET["id"];*/
 </head>
 <body style="background-image: url(cinco.png); background-repeat: no-repeat;background-size: cover "> <br> <br> <br> 
 
-    <form action="guardarInfoEmpresa.php" method="POST" >
+    <form action="guardarInfoEmpresa.php" method="POST" enctype="multipart/form-data">
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4"> 
             <div class="mb-4 d-flex justify-content-start align-items-center">
@@ -43,9 +43,19 @@ $id = $_GET["id"];*/
                   <input type="file" name="fotoEmpresa">
              </div> <br>
 
+             <div class="mb-4">
+                <label for="servicio"><i class="bi bi-person-check"></i> ¿Pequeña descripcion de la empresa? </label>
+                <textarea name="descripcionEmpresa" id="descripcionEmpresa" class="form-control" placeholder="Digiete aquí una pequeña descripcion de la empresa"></textarea>
+                        
+            </div>
+            <div class="mb-4">
+                <label for="telefono"><i class="bi bi-phone"></i> Nit de la empresa</label>
+                <input type="text" class="form-control" name="nit" id="nit" placeholder= "Digite el nit de la empresa" required>   
+            </div>
+
             <div class="mb-4">
                 <label for="ubicacion"><i class="bi bi-geo-alt-fill"></i> ubicacion</label>
-                <input type="text" class="form-control" name="ubicacion" id="ubicacion" placeholder= ubicacion de la empresa" required>
+                <input type="text" class="form-control" name="ubicacion" id="ubicacion" placeholder= "ubicacion de la empresa" required>
                 <div class="correo text-danger"></div>
             </div> 
 
@@ -62,8 +72,18 @@ $id = $_GET["id"];*/
             </div>
 
             <div class="mb-4">
+                <label for="telefono"><i class="bi bi-phone"></i> Codigo Postal</label>
+                <input type="text" class="form-control" name="codigoPostal" id="telefono" placeholder= "Digite su numero de Codigo Postal" required>    
+            </div>
+
+            <div class="mb-4">
                 <label for="servicio"><i class="bi bi-person-check"></i> ¿Que servicio ofrecen? </label>
                 <textarea name="servicio" id="servicio" class="form-control" placeholder="Digiete aquí los servivios que ofrece la empresa"></textarea>
+                        
+            </div>
+            <div class="mb-4">
+                <label for="servicio"><i class="bi bi-person-check"></i> Razon social </label>
+                <textarea name="razonSocial" id="razonSocial" class="form-control" placeholder="Digiete aquí los servivios que ofrece la empresa"></textarea>
                         
             </div>
 

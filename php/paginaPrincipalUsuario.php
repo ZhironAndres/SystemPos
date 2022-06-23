@@ -98,7 +98,7 @@ $info= $sentenciaDos->fetchAll();
                     </div>
                     </div>
                     <div class="botonActualizar">
-                        <button><a href="#">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
+                        <button><a href="formularioActualizacionPerfilUsuario.php">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
                 
                 </div>
             </div>
@@ -152,7 +152,7 @@ $info= $sentenciaDos->fetchAll();
                 </div>
                 <div class="information">
                 <div class="buttonActualizar">
-                        <button><a href="#">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
+                        <button><a href="actualizarPerfilUsuario.php">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
                 </div>
             </section>

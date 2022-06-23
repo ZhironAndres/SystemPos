@@ -50,8 +50,18 @@ else{
   }elseif ($sentencia->rowCount() == 1) {
 
     $_SESSION['correo'] = $datos->correo;
-    $_SESSION['id_usuario'] = $datos->id;
+    $_SESSION['empresa_id'] = $datos->id;
+    $consultaFormulario=$conexion->prepare("SELECT * FROM formularioempresa WHERE empresa_id = ?");
+    $consultaFormulario->execute([$datos->id]);
+    $datosFormulario = $consultaFormulario->fetch(PDO::FETCH_OBJ);
+if(empty($datosFormulario)){
+
     header("location: formularioEmpresa.php");
+
+  }
+else{
+  header("location: paginaPrincipalEmpresa.php");
+}
 
   }
 

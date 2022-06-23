@@ -13,7 +13,14 @@
 
 /*if(!isset($_GET["id"])) exit();
 $id = $_GET["id"];*/
-
+$correo = $_SESSION['correo'];
+$idUsuario= $_SESSION["id_usuario"];
+$sentencia = $conexion->query("select * from formulariousu where usuario_id = '$idUsuario'");
+$sentenciaDos = $conexion->query("select * from usuario where id = '$idUsuario'");
+$sentenciaDos->execute();
+$info= $sentenciaDos->fetchAll();
+  $sentencia->execute();
+  $datos = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -30,31 +37,34 @@ $id = $_GET["id"];*/
     
 </head>
 <body style="background-image: url(cinco.png); background-repeat: no-repeat;background-size: cover "> <br> <br> 
-  <form action="guardarInfoUsuario.php" method="POST" enctype="multipart/form-data">
+  <form action="actualizarPerfilUsuario.php" method="POST" enctype="multipart/form-data">
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4"> 
             <div class="mb-4 d-flex justify-content-start align-items-center">
               
                 <h4>  Completa tu perfil</h4>
             </div>
+            <?php foreach($datos as $dato){ ?>
             <div> <h5><i class="bi bi-file-person-fill"></i> subir foto de perfil </h5>
-                  <input type="file" name="foto">
+                  <input  type="file" name="foto">
              </div> <br>
+            
              <div class="mb-3">
                           <label class="form-label"> <i class="bi bi-person-check"></i> Breve descripcion de usted</label>
-                           <textarea name="description" id="description" class="form-control" placeholder="Digite aquí lo que realizaba en esa empresa"></textarea>
+                           <textarea value="<?php echo $dato->descripcion; ?>" name="description" id="description" class="form-control" placeholder="Digite aquí lo que realizaba en esa empresa"></textarea>
                     </div>
             <div class="mb-1">
 
                     <div class="mb-4 d-flex justify-content-between"> 
                         <div>
+                         
                             <label for="ciudad"> <i class="bi bi-globe2"></i> Ciudad</label>
-                            <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder= "Ciudad de nacimiento" required>
+                            <input value="<?php echo $dato->ciudad?>" type="text" class="form-control" name="ciudad" id="ciudad" placeholder= "Ciudad de nacimiento" required>
                             
                         </div>
                         <div >
                             <label for="departamento"> <i class="bi bi-geo-alt"></i> Departamento</label>
-                            <input type="text" class="form-control" name="departamento" id="departamento" placeholder= "Departamento de nacimiento" required>
+                            <input value="<?php echo $dato->departamento?>" type="text" class="form-control" name="departamento" id="departamento" placeholder= "Departamento de nacimiento" required>
                             
                         </div>
                     </div>
@@ -63,7 +73,7 @@ $id = $_GET["id"];*/
 
                     <div class="mb-3">
                           <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha de nacimiento: </label>
-                          <input type="date" name="fechaNaci" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                          <input type="date" name="fechaNaci" value="<?php echo $dato->fechaNaci; ?>" min="1960-12-31" max="2100-12-31" class="form-control">
                     </div>
 
                     <!--<div>
@@ -72,7 +82,7 @@ $id = $_GET["id"];*/
                     </div> <br>-->
                     <div class="mb-4">
                         <label for="residencia"><i class="bi bi-house"></i> Residencia</label>
-                        <input type="text" class="form-control" name="residencia" id="residencia" placeholder= "Digite dirreccion de residencia" required>
+                        <input value="<?php echo $dato->residencia; ?>" type="text" class="form-control" name="residencia" id="residencia" placeholder= "Digite dirreccion de residencia" required>
                         
                     </div> 
                     <div class="mb-4">
@@ -95,13 +105,13 @@ $id = $_GET["id"];*/
 
                         <div >
                             <label for="numDocumet"> <i class="bi bi-credit-card-2-front"></i>  Numero de documento</label>
-                            <input type="text" class="form-control" name="numDocumet" id="numDocumet" placeholder= "Digite Numero de documento" required>
+                            <input value= "<?php echo $dato->numDocumet?>" type="text" class="form-control" name="numDocumet" id="numDocumet" placeholder= "Digite Numero de documento" required>
                             <div class="apellido text-danger"></div>
                         </div>
                     </div>
                     <div class="mb-4">
                         <label for="telefono"><i class="bi bi-phone"></i> teléfono</label>
-                        <input type="text" class="form-control" name="telefono" id="telefono" placeholder= "Digite su numero de teléfono" required>
+                        <input value="<?php echo $dato->telefono?>" type="text" class="form-control" name="telefono" id="telefono" placeholder= "Digite su numero de teléfono" required>
                     </div> 
 
                     <h6 style="text-align: center;" ><i class="bi bi-briefcase"></i> Experiencia</h6>
@@ -110,34 +120,34 @@ $id = $_GET["id"];*/
 
                     <div class="mb-3">
                       <h6>ㅤ</h6>
-                        <input type="text" class="form-control" name="nombreEmpresa" id="nombreEmpresa" placeholder= "Nombre empresa" required>
+                        <input  value="<?php echo $dato->nombreEmpresa; ?>" type="text" class="form-control" name="nombreEmpresa" id="nombreEmpresa" placeholder= "Nombre empresa" required>
                     </div>
 
                       <div class="mb-3">
                           <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha inicio </label>
-                          <input type="date" name="fechaInicio" value="" min="1960-12-31" max="2100-12-31" class="form-control">
-                    </div>
-                    <div class="mb-3">
+                          <input value="<?php echo $dato->fechaInicio?>" type="date" name="fechaInicio" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                    </div><div class="mb-3">
                           <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha de finalizacion </label>
-                          <input type="date" name="fechaFinal" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                          <input value= "<?php echo $dato->fechaFinal?>" type="date" name="fechaFinal" value="" min="1960-12-31" max="2100-12-31" class="form-control">
                     </div>
+
                      <div class="mb-3">
                           <label class="form-label"> <i class="bi bi-person-check"></i> Cargo que desempeñó</label>
-                           <textarea name="cargo" id="cargo" class="form-control" placeholder="Digiete aquí lo que realizaba en esa empresa"></textarea>
+                           <textarea value="<?php echo $dato->cargo ?>" name="cargo" id="cargo" class="form-control" placeholder="Digiete aquí lo que realizaba en esa empresa"></textarea>
                     </div>
                     <h6 style="text-align: center;" ><i class="bi bi-mortarboard-fill"></i> Estudios</h6>
                     <div>
                             <label for="nomInstitu"> <i class="bi bi-globe2"></i> Institucion</label>
-                            <input type="text" class="form-control" name="nomInstitu" id="nomInstitu" placeholder= "Nombre de la institucion" required>
+                            <input value="<?php echo $dato->nomInstitu; ?>"  type="text" class="form-control" name="nomInstitu" id="nomInstitu" placeholder= "Nombre de la institucion" required>
                             
                         </div>
                         <div class="mb-3">
                           <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha inicio </label>
-                          <input type="date" name="fechaInicial" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                          <input value="<?php echo $dato->fechaInicial; ?>" type="date" name="fechaInicial" value="" min="1960-12-31" max="2100-12-31" class="form-control">
                     </div>
                     <div class="mb-3">
                           <label class="form-label"> <i class="bi bi-calendar-date"></i> Fecha de finalizacion </label>
-                          <input type="date" name="fechaFinalizacion" value="" min="1960-12-31" max="2100-12-31" class="form-control">
+                          <input value="<?php echo $dato->fechaFinalizacion; ?>" type="date" name="fechaFinalizacion" value="" min="1960-12-31" max="2100-12-31" class="form-control">
                     </div>
 
                     <label class="btn" for="my-file-selector">
@@ -146,12 +156,12 @@ $id = $_GET["id"];*/
                           <h6 style="text-align: center;" ><i class="bi bi-mortarboard-fill"></i> Habilidades</h6>
                     <div>
                             <label for="lenguajes"> <i class="bi bi-globe2"></i> Lenguajes de programacion</label>
-                            <input type="text" class="form-control" name="lenguajes" id="lenguajes" placeholder= "Lenguajes de programacion" required>
+                            <input value="<?php echo $dato->lenguajes; ?>" type="text" class="form-control" name="lenguajes" id="lenguajes" placeholder= "Lenguajes de programacion" required>
                             
                         </div>
                         <div>
                             <label for="herramientas"> <i class="bi bi-globe2"></i> Herramientas</label>
-                            <input type="text" class="form-control" name="herramientas" id="herramientas"  placeholder= "Por favor indique que herramientas utiliza ejemplo: Github, Git" required>
+                            <input value="<?php echo $dato->herramientas;  } ?>" type="text" class="form-control" name="herramientas" id="herramientas"  placeholder= "Por favor indique que herramientas utiliza ejemplo: Github, Git" required>
                             
                         </div>
                     <div class="mb-3 content_select">
