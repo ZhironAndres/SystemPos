@@ -2,16 +2,18 @@
 
 include("conexion.php");
 
-$sentencia = $conexion->query("select * from usuario");
-$sentenciaDos = $conexion->query("select * from formulariousu");
-$sentenciaDos->execute();
-$info= $sentenciaDos->fetchAll();
-  $sentencia->execute();
-  $datos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$wheresql= "";
+$busqueda="";
 
-  print_r($info);
-  
-    ?>
+if(isset($_POST["busqueda"]) && !empty($_POST["busqueda"])){
+    $busqueda = $_POST["busqueda"];
+    $wheresql = " where nombres like '%$busqueda%'  or apellidos like '%$busqueda%'  or cargo like '%$busqueda%'";
+}
+
+$sentencia= $conexion->query("select * from usuario u join formulariousu f on f.usuario_id = u.id $wheresql limit 20");
+
+
+?>
   
 <!DOCTYPE html>
 <html lang="en">
@@ -56,42 +58,92 @@ $info= $sentenciaDos->fetchAll();
            <section class="contenedor">
             <div class="buscador">
                 <div class="conBuscador">
+                
+                <form action="talento.php" method="POST">
                 <input type="search" name="busqueda" id="search" placeholder="Ingrese su busqueda, ejemplo:Desarrollador web" >
                  <i class="fa-solid fa-magnifying-glass"></i>
-                 <input type="submit" value="Buscar" class="enviar">        
+                 <input type="submit" value="Buscar" class="enviar"> 
+                </form>    
                 </div>
+                <?php
+                 if($busqueda){
+                    echo "<div style='display:flex;width:100%;height:200px;align-items:center;justify-content:center'>";                   
+                    echo "<h3 style='text-align:center; font-size:2rem;'>Los resultados del termino: '$busqueda'</h3>";
+                    echo" </div>";
+                }
+                ?>
             </div>
            </section>
-           <section class="profileDisplay" >
+           <section class="profileDisplay">
             <section class="container">
-            <?php foreach( $info as $inf){
-                echo "<div class='card'>";
-                echo "<div class='face face1'>";
-                echo "<div class='content'>";
-                echo "<img src='../IMG/$inf[foto]'>";
+          <?php 
+          $contador = 0;
+
+       
+          
+
+
+
+          while($datos = $sentencia->fetch(PDO::FETCH_OBJ)){ 
+
+              echo "<section class='container'>";
+              echo "<div class='card'>";
+              echo "<div class='face face1'>";
+              echo "<div class='content'>";
+              echo "<img src='../archivos/". $datos->foto ."'>";
+              echo "<h3>$datos->nombres $datos->apellidos</h3>";
+              echo"</div>";
+               echo"</div>";
+               echo"<div class='face face2'>";
+               echo "<div class='content'>";
+               echo "<p>$datos->descripcion</p>";
+               echo"<a id='open$contador' href='#'>Ver más</a>";
                echo"</div>";
                echo"</div>";
                echo"</div>";
+               echo"</section>";
+               echo "<section class='modal-container' id='modal_container$contador'>";
+               echo "<div class='modal'>";
+               echo "<div id='close$contador' class='close-btn'>&times</div>";
+               echo"<div class='modalcard'>";
+               echo"<img src='../archivos/$datos->foto' alt='profile people' style='width:100%'>";
+               echo "<h3 class='cardtitle'>$datos->nombres $datos->apellidos</h3>";
+               echo"<p>$datos->cargo</p>";
+                echo"<p>$datos->telefono</p>";
+                echo"<p>$datos->lenguajes</p>";
+                echo"<p>$datos->herramientas</p>";
+                echo"<p><button><a style='text-decoration:none; color:white;' href='../mensajeriaSystemPos/vistas/login.php'>Mensaje</a></button></p>";
+                echo"</div>";
+                echo"</div>";
+                echo"</section>";
+
+                
+                echo"<script>
+                    const open$contador = document.getElementById('open$contador');
+                    const modal_container$contador= document.getElementById('modal_container$contador');
+                    const close$contador = document.getElementById('close$contador');
+                    
+
+                    open$contador.addEventListener('click', abrir$contador);
+                    close$contador.addEventListener('click', cerrar$contador);
+                    function abrir$contador(){
+                        modal_container$contador.classList.add('show')
+                    }
+
+                    function cerrar$contador(){
+                        modal_container$contador.classList.remove('show')
+                    }
+                    
+                    
+
+                    
+                </script>";
+
+            $contador++;
             }
-
-?>          
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <img src="../IMG/dev1.jpg" alt="">
-                            <h3>Andres Morales</h3>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus quam quia corrupti et maiores aliquam necessitatibus cum alias magni voluptatum.</p>
-                            <a id="open" href="#">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-                </section>
-
-
+            
+         
+          ?>                  
                <!-- <div class="Card">
                 <div class="profileImage">
                     <img src="../IMG/dev2.jpg" alt="">
@@ -115,6 +167,7 @@ $info= $sentenciaDos->fetchAll();
         </section>
     </main>
     <footer></footer>
-    <script src="../JS/loader2.js"></script>
+     <!-- <script src="../JS/loader2.js"></script>-->
+    
 </body>
 </html>

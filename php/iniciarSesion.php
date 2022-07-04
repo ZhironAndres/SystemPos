@@ -44,6 +44,9 @@
     <title>Iniciar Sesion</title>
 </head>
 <body>
+    <div>
+        <a href="../home.php"><i class='fas back'>&#xf0a8;</i></a>
+    </div>
     <main>
     <section class="popup-container">
         <div class="center">
@@ -81,7 +84,7 @@
 
     <div id="modal_container" class="modal-container">
       <div class="modal">
-        <div class="close-btn">&times;</div>
+        <div id="close" class="close-btn">&times;</div>
         <form action="actualizar_clave.php" method="POST">
             <h2>Actualizar contraseña</h2><br>
             <div class="form-element">

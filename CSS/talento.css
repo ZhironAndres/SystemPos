@@ -46,7 +46,7 @@ header{
     position: fixed;
     margin-bottom: 15px;
     opacity: 0.8;
-    z-index: 1;
+    z-index: 2;
     align-items: center;
    
 }
@@ -315,3 +315,95 @@ color: white;
     background: #333;
     color:  #fff;
 }
+
+/*Modal container*/
+
+
+.modal-container{
+     display: flex;
+        background-color: rgba(8, 6, 6, 0.3);
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        height: 100vh;
+        width: 100vw;
+}
+
+.modal{
+   background-color: #fff;
+   width: 700px; 
+   max-width: 100%;
+   padding: 30px 50px;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1  ;
+}
+.close-btn{    
+    top: -11px;
+    right: 157px;
+    width: 20px;
+    height: 20px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    font-size: 1rem;
+}
+ 
+ .modalcard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    max-height: 500px;
+    text-align: center;
+  }
+  
+  .cardtitle {
+    color: grey;
+    font-size: 3rem;
+    font-weight: 700;
+
+  }
+
+  .modalcard p{
+    color: grey;
+    font-size: 1.5rem;
+  }
+  
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;    
+    font-size: 18px;
+  
+  }
+  
+  a{
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }

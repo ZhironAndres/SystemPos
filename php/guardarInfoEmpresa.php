@@ -1,7 +1,7 @@
 <?php
 include ('conexion.php');
 session_start();
-	$carpetaArchivos = $_SERVER["DOCUMENT_ROOT"]."/SystemPos/archivos/";
+$carpetaArchivos = $_SERVER["DOCUMENT_ROOT"] . "/SystemPos/archivos/" ;
 	$idEmpresa= $_SESSION['empresa_id'];
 	$fotoEmpresa= basename($_FILES["fotoEmpresa"]["name"]);
 	$descripcionEmpresa=$_POST['descripcionEmpresa'];

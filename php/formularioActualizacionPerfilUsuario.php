@@ -46,7 +46,7 @@ $info= $sentenciaDos->fetchAll();
             </div>
             <?php foreach($datos as $dato){ ?>
             <div> <h5><i class="bi bi-file-person-fill"></i> subir foto de perfil </h5>
-                  <input  type="file" name="foto">
+                  <input  type="file" name="foto" >
              </div> <br>
             
              <div class="mb-3">

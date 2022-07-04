@@ -18,6 +18,10 @@
     </style>
 </head>
 <body>
+
+    <div>
+        <a href="iniciarSesion.php"><i class='fas back'>&#xf0a8;</i></a>
+    </div>
     <main>
     <section class="popup-container">
         <div class="center">

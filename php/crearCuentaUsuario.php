@@ -14,6 +14,10 @@
     <title>Iniciar Sesion</title>
 </head>
 <body>
+
+    <div>
+        <a href="empresaOUsuario.php"><i class='fas back'>&#xf0a8;</i></a>
+    </div>
     <main>
     <section class="popup-container">
         <div class="center">
@@ -48,9 +52,6 @@
                 <div class="form-element">
                     <button >Registrar</button>
                     <p id="error"></p>
-                </div>
-                <div class="form-element">
-                    <a href="#">¿Olvido su contraseña?</a>
                 </div>
                 <div class="form-element">
                     <a href="iniciarSesion.php">¿Ya tiene cuenta? Ingrese Aqui</a>

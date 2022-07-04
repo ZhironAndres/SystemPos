@@ -3,7 +3,7 @@
 
 include ('conexion.php');
 session_start();
-	$carpetaArchivos = $_SERVER["DOCUMENT_ROOT"]."/SystemPos/archivos/";
+$carpetaArchivos = $_SERVER["DOCUMENT_ROOT"] . "/SystemPos/archivos/" ;
 	$ciudad=$_POST['ciudad'];
 	$departamento=$_POST['departamento'];
 	$fechaNaci=$_POST['fechaNaci'];
@@ -19,7 +19,7 @@ session_start();
 	$nomInstitu=$_POST['nomInstitu'];
 	$fechainicial=$_POST['fechaInicial'];
 	$fechaFinalizacion=$_POST['fechaFinalizacion'];
-	$certificados=basename($_FILES["certificados"]["name"]);
+	$certificados= basename($_FILES["certificados"]["name"]);
 	$nombreFoto = basename($_FILES["foto"]["name"]);
 	$descripcion=$_POST['description'];
 	$nombreCV = basename($_FILES["files"]["name"]);

@@ -32,11 +32,11 @@
                     <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#Nosotros">Nosotros <i class="fa-solid fa-angle-down"></i></a>
                         <ul class="submenu">
-                            <li><a href="#">Mision</a></li>
-                            <li><a href="#">Vision</a></li>
+                            <li><a id="openMision">Misión</a></li>
+                            <li><a id="openVision">Visión</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="php/iniciarSesion.php">Iniciar <span></span> Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="php/iniciarSesion.php">Iniciar <span></span> Sesión</a></li>
                     <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -47,6 +47,23 @@
             </div>
         </nav>
     </header>
+
+    <div id="modalMision" class="modalMision">
+        <div class="modal">
+            <div id="closeMision" class="close-btn">&times;</div>
+            <center><h3>MISION</h3></center>
+            <p>Brindar un software para personas con conocimientos en el área de sistemas y/o profesionales del mismo área en  la ciudad de Cartagena que les permita registrarse y de esta manera, ofrecer sus servicios a todo público; de esta manera cumpliremos satisfactoriamente nuestra misión, servir de intermediario entre las personas que se encuentran registradas en la pagina y las personas o empresas que requieran de sus servicios.</p>
+        </div>
+    </div><br><br>
+
+    <div id="modalVision" class="modalVision">
+        <div class="modal">
+            <div id="closeVision" class="close-btn">&times;</div>
+            <center><h3>VISION</h3></center>
+            <P>Convertirnos en una de las páginas más visitadas por los Cartageneros y seguir creciendo para que este proyecto no solo este disponible a nivel local sino también nacional y en un futuro a mediano plazo, internacional.</P>      
+        </div>
+    </div>
+    
     <main>
         <section class="section-principal">
             <section class="welcome-home" data-aos="zoom-in" data-aos-duration="2000">
@@ -318,6 +335,7 @@
     <script src="JS/loader.js"></script>
     <script src="JS/silder.js"></script>
     <script src="JS/menu.js"></script>
+    <script src="JS/misionVision.js"></script>
 
 
 </body>

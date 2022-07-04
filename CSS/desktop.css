@@ -148,6 +148,107 @@ header{
     transition: all 0.3s ease-in-out;
     background-color: black;
 }
+
+.modalMision {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    /*height: 100vh;
+    width: 100vw;*/
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.modalVision{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;  
+    top: 0;
+    opacity: 0;
+    left: 0;
+    /*width: 100vw;*/
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.close-btn{
+   position:absolute;
+   top:140px;
+   right: 380px;
+   width:15px;
+   height:15px;
+   background:#888;
+   color:#eee;
+   text-align:center;
+   line-height: 15px;
+   border-radius: 15px;
+   cursor: pointer;
+}
+
+.modalMision .modal {
+  background-color: rgb(26, 188, 156);
+  width: 50%;
+  padding: 30px 50px;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 9%;
+  opacity: 1;
+
+}
+
+.modalMision .modal p{
+  margin-top: 5px;
+  display:block;
+  padding:10px;
+  font-size: 20px;    
+    color: white;  
+}
+
+.modalMision .modal h3{
+    font-size: 30px;
+    color: white;
+}
+
+.modalVision .modal {
+  
+  background-color: rgb(26, 188, 156);
+  width: 50%;
+  padding: 30px 50px;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 9%;
+  opacity: 1;
+}
+
+.modalVision .modal p{
+  margin-top: 5px;
+  display:block;
+  padding:10px;
+  font-size: 20px;  
+  color: white;  
+}
+
+.modalVision .modal h3{
+    font-size: 30px;
+    color: white;
+}
+
+
+
 /*MAIN*/
 .section-principal{
     width: 100%;

@@ -91,7 +91,7 @@ $datos = $sentencia->fetchAll(PDO::FETCH_OBJ);
                     </div>
                     </div>
                     <div class="botonActualizar">
-                        <button><a href="#">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
+                        <button><a href="formularioActualizacionPerfilEmpresa.php">Actualizar datos </a> <i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
             </section>
